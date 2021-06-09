@@ -1,5 +1,5 @@
 use crate::router;
-use actix_web::{App, HttpServer, dev::Server, web};
+use actix_web::{App, HttpServer, dev::Server};
 use tracing_actix_web::TracingLogger;
 use std::net::TcpListener;
 

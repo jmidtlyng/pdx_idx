@@ -1,0 +1,21 @@
+<div>
+	<h1><%= site_name %></h1>
+	<p>
+		This is a map of <%= region %>, <%= state %> 
+		based on my mental model of the area. This shows 
+		how I discuss and frame where places and things 
+		are here.
+	</p>
+	<p>
+		I added houses for utility. We moved every year
+		for 4 years to try new places and learn new 
+		neighborhoods. This is the map I tried to build
+		in my head while staring at Zillow or the like.
+	</p>
+	<p>Thank you Open Street Maps</p>
+	<br/>
+	<p>IDX? Probably the silliest acronym ever. Learn more here:</p>
+	<a href="https://www.whatisidx.com/" target="_blank">
+		What is IDX?
+	</a>
+</div>

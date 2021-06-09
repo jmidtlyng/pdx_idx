@@ -1,4 +1,8 @@
+use actix_web::error::InternalError;
+use actix_web::http::StatusCode;
+use actix_web::{HttpResponse, get, Responder, web};
 use sailfish::TemplateOnce;
+use crate::config::get_config;
 
 #[derive(TemplateOnce)]
 #[template(path = "index.stpl")]
@@ -10,9 +14,11 @@ struct Template {
 
 #[get("")]
 async fn get() -> impl Responder {
-	let site_name = "PDX IDX";
-	let state = "Oregon";
-	let region = "Portland";
+	let config = get_config().expect("Failed to read configuration.");
+
+	let site_name = config.site_name;
+	let state = config.state;
+	let region = config.region;
 	
 	let html = Template { site_name, state, region }
 		.render_once()
@@ -27,10 +33,12 @@ pub fn config(cfg: &mut web::ServiceConfig){
 }
 
 pub fn test() -> String {
+	let config = get_config().expect("Failed to read configuration.");
+
 	let ctx = Template { 
-		site_name: "PDX IDX",
-		state: "Oregon",
-		region: "Portland"
+		site_name: config.site_name,
+		state: config.state,
+		region: config.region
 	};
 	ctx.render_once().unwrap()
 }
