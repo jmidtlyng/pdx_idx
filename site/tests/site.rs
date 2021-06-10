@@ -21,12 +21,11 @@ async fn server_check() {
 		let client = reqwest::Client::new();
 
 		template_rendering_check(app, client).await;
-		crud_check(app, client).await;
 }
 
 async fn template_rendering_check(app: Site, client: reqwest::Client){
-		let routes: &[(&str, String); 3] = &[
-				("/", routes::index::test()),
+		let routes: &[(&str, String); 2] = &[
+				("", routes::index::test()),
 				("map", routes::map::test())
 		];
 		

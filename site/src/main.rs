@@ -1,6 +1,6 @@
-use site::config::get_config;
 use std::net::TcpListener;
-use crate::server::serve;
+use site::config::get_config;
+use site::server::serve;
     
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {

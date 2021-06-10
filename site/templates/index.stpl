@@ -1,10 +1,9 @@
 <div>
-	<h1><%= site_name %></h1>
+	<h1>PDX IDX/h1>
 	<p>
-		This is a map of <%= region %>, <%= state %> 
-		based on my mental model of the area. This shows 
-		how I discuss and frame where places and things 
-		are here.
+		This is a map of Portland, OR based on my mental 
+		model of the area. This shows how I discuss and 
+		frame where places and things are here.
 	</p>
 	<p>
 		I added houses for utility. We moved every year
